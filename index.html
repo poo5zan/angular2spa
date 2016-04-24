@@ -26,14 +26,14 @@
 		
 		System.config({
 			packages:{
-				app:{
+				mobileStore:{
 					format:'register',
 					defaultExtension: 'js'
 				}
 			}
 		});
 
-		System.import('app/main').then(null,console.error.bind(console));
+		System.import('mobileStore/bootstrapper/app-mobile.bootstrapper').then(null,console.error.bind(console));
 
 	</script>
 
@@ -41,9 +41,9 @@
 </head>
 <body>
 
-<my-app>loading app haha</my-app>
+<!-- <my-app>loading app haha</my-app> -->
 
- 
+ <app-mobileStore>loading mobile store</app-mobileStore>
 
 </body>
 </html>

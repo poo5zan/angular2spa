@@ -36,8 +36,9 @@ System.register(['angular2/core', 'angular2/router', './hero-details.component',
                     this.selectedHero = hero;
                 };
                 HeroesComponent.prototype.getHeroes = function () {
-                    this.heroes = this._heroService.getHeroes();
-                    //.then(heroes => this.heroes = heroes);
+                    var _this = this;
+                    // this.heroes =	this._heroService.getHeroes();
+                    this._heroService.getHeroes().then(function (heroes) { return _this.heroes = heroes; });
                 };
                 HeroesComponent.prototype.ngOnInit = function () {
                     this.getHeroes();

@@ -26,8 +26,8 @@ System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_
                 function HeroService() {
                 }
                 HeroService.prototype.getHeroes = function () {
-                    //return Promise.resolve(HEROES);
-                    return mock_heroes_1.HEROES;
+                    return Promise.resolve(mock_heroes_1.HEROES);
+                    //return HEROES;
                 };
                 //get heroes slowly
                 // getHeroesSlowly(){
@@ -36,11 +36,9 @@ System.register(['./mock-heroes', 'angular2/core'], function(exports_1, context_
                 // 		);
                 // }
                 HeroService.prototype.getHero = function (id) {
-                    // return Promise.resolve(HEROES).then(
-                    // 		heroes => heroes.filter(hero => hero.id === id)[0]
-                    // 	);
-                    var her = mock_heroes_1.HEROES.filter(function (h) { return h.id === id; })[0];
-                    return her;
+                    return Promise.resolve(mock_heroes_1.HEROES).then(function (heroes) { return heroes.filter(function (hero) { return hero.id === id; })[0]; });
+                    // var her = HEROES.filter(h => h.id === id)[0];
+                    // return her;
                 };
                 HeroService = __decorate([
                     core_1.Injectable(), 

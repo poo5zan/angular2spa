@@ -8,8 +8,8 @@ import {Injectable} from 'angular2/core';
 export class HeroService{
 
 	getHeroes(){
-		//return Promise.resolve(HEROES);
-		return HEROES;
+		return Promise.resolve(HEROES);
+		//return HEROES;
 	}
 
 	//get heroes slowly
@@ -20,11 +20,11 @@ export class HeroService{
 	// }
 
 	getHero(id : number){
-		// return Promise.resolve(HEROES).then(
-		// 		heroes => heroes.filter(hero => hero.id === id)[0]
-		// 	);
-		var her = HEROES.filter(h => h.id === id)[0];
-		return her;
+		return Promise.resolve(HEROES).then(
+				heroes => heroes.filter(hero => hero.id === id)[0]
+			);
+		// var her = HEROES.filter(h => h.id === id)[0];
+		// return her;
 	}
 
 }

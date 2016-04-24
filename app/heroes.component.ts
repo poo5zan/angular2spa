@@ -27,12 +27,12 @@ export class HeroesComponent implements OnInit {
 	}
 
 	getHeroes(){
-	 this.heroes =	this._heroService.getHeroes();
-		//.then(heroes => this.heroes = heroes);
+	// this.heroes =	this._heroService.getHeroes();
+		this._heroService.getHeroes().then(heroes => this.heroes = heroes);
 	}
 
 	ngOnInit(){
-		this.getHeroes();
+	 this.getHeroes();
 	}
 
 	gotoDetail(){

@@ -1,0 +1,10 @@
+<!-- hero.detail.component.html -->
+
+ <div *ngIf="hero">
+
+	 <h1>name {{hero.id}} , {{hero.name}}</h1> 
+	
+	<input [(ngModel)]="hero.name" placeholder="name">
+
+	<button (click)="goBack()"> Back</button>
+</div>

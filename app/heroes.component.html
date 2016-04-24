@@ -1,0 +1,15 @@
+<!-- heroes.component.html -->
+
+</h4>My Heroes</h4>
+	<ul>
+		<li *ngFor="#hero of heroes"
+		[class.selected]="hero === selectedHero"
+		 (click)="onSelect(hero)" 
+		>
+			<span>{{hero.id}}, {{hero.name}}</span>
+		</li>
+	</ul>
+	<div *ngIf="selectedHero">
+		<h4>selected hero {{selectedHero.name | uppercase}}</h4>
+		<button (click)=gotoDetail()> View Details</button>
+	</div>

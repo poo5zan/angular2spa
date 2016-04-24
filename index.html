@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<base href="/">
+	<title>spa</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+
+	<!-- load libraries -->
+	<!-- IE requires polyfills, in the exact order -->
+	<script type="text/javascript" src="./node_modules/es6-shim/es6-shim.min.js"></script>
+	<script type="text/javascript" src="./node_modules/reflect-metadata/reflect.js"></script>
+	<script type="text/javascript" src="./node_modules/zone.js/dist/zone.js"></script>
+	<script type="text/javascript" src="./node_modules/systemjs/dist/system-polyfills.js"></script>
+	<script type="text/javascript" src="./node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+	<script type="text/javascript" src="./node_modules/systemjs/dist/system.src.js"></script>
+	<script type="text/javascript" src="./node_modules/rxjs/bundles/Rx.js"></script>
+	<script type="text/javascript" src="./node_modules/angular2/bundles/angular2.dev.js"></script>
+	<script type="text/javascript" src="./node_modules/angular2/bundles/router.dev.js"></script>
+
+
+	<!-- configure systemJs -->
+	<script type="text/javascript">
+		
+		System.config({
+			packages:{
+				app:{
+					format:'register',
+					defaultExtension: 'js'
+				}
+			}
+		});
+
+		System.import('app/main').then(null,console.error.bind(console));
+
+	</script>
+
+
+</head>
+<body>
+
+<my-app>loading app haha</my-app>
+
+<router-outlet></router-outlet>  
+
+</body>
+</html>
